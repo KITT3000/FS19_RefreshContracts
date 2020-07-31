@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="47">
+<modDesc descVersion="51">
     <author>yumi</author>
     <version>1.0.0.0</version>
     <title>
         <en>Refresh Contracts</en>
-        <fr>Actualiser les contrats</fr>
-        <de>Verträge aktualisieren</de>
-    </title>
+        <fr>Actualiser Les Contrats</fr>
+        <de>Verträge Aktualisieren</de>
+    </title> 
     <description>
         <en><![CDATA[
 This mod enable to refresh the list of contracts proposed if you're not satisfied with current list by clicking on a button in the contracts panel.
