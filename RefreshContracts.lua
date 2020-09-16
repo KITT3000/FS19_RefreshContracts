@@ -19,6 +19,9 @@ function RefreshContracts:onFrameOpen()
 
         inGameMenu.menuButton[1].parent:addElement(refreshContractsElement)
         inGameMenu.refreshContractsElement_Button = refreshContractsElement
+
+        inGameMenu.onClickMenuExtra1 = Utils.overwrittenFunction(inGameMenu.onClickMenuExtra1, RefreshContracts.onClickMenuExtra1)
+
     end
 end
 InGameMenuContractsFrame.onFrameOpen = Utils.appendedFunction(InGameMenuContractsFrame.onFrameOpen, RefreshContracts.onFrameOpen)
@@ -34,3 +37,13 @@ function RefreshContracts:onFrameClose()
     end
 end
 InGameMenuContractsFrame.onFrameClose = Utils.appendedFunction(InGameMenuContractsFrame.onFrameClose, RefreshContracts.onFrameClose)
+
+---Due to how the input system works in fs19, the input is not only handled with a click callback but also via these events
+function RefreshContracts.onClickMenuExtra1(dialog, superFunc, ...)
+    if RefreshContracts.debug then print("RefreshContracts:onClickMenuExtra1") end
+    if superFunc ~= nil then
+        superFunc(dialog, ...)
+    end
+
+    dialog.refreshContractsElement_Button.onClickCallback(dialog)
+end
